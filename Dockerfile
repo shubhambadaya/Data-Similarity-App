@@ -17,7 +17,7 @@ RUN apt-get update && apt-get install -y \
     libxt-dev \
     libssh2-1-dev
    
- RUN R -e "install.packages(c('shiny', 'shinythemes', 'dplyr','shinydashboard', 'ggplot2', 'plotly', 'data.table' ),  \
+ RUN R -e "install.packages(c('shiny', 'shinythemes', 'dplyr','shinydashboard', 'ggplot2', 'plotly', 'data.table' ,'DT'),  \
             repos='https://packagemanager.rstudio.com/cran/__linux__/focal/2021-04-23')"
    
 ## Install packages from CRAN
