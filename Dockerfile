@@ -40,4 +40,4 @@ COPY . /srv/shiny-server/shiny/
 # select port
 EXPOSE 3838
 # Copy further configuration files into the Docker image
-CMD ["/usr/bin/shiny-server"]
+CMD ["/usr/bin/shiny-server/app.R"]
