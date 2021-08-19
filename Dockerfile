@@ -17,18 +17,7 @@ RUN apt-get update && apt-get install -y \
     libxt-dev \
     libssh2-1-dev
     
-RUN R -e 'install.packages(c(\
-              "shiny", \
-              "shinythemes", \
-              "zoo", \
-              "shinydashboard", \
-              "ggplot2" \
-              "plotly", \
-              "highcharter", \
-              "data.table" \
-            ), \
-            repos="http://cran.rstudio.com/"\
-          )'
+RUN R -e "install.packages(c("shiny", "shinythemes", "zoo", "shinydashboard", "ggplot2", "plotly", "highcharter", "data.table" ),  repos='http://cran.rstudio.com/')"
    
 ## Install packages from CRAN
 RUN install2.r --error \
