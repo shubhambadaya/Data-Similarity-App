@@ -29,8 +29,12 @@ RUN install2.r --error \
     && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
 
 ## assume shiny app is in build folder /shiny
-COPY . /srv/shiny-server/shiny/
+COPY . /srv/shiny-server/
+
 # select port
 EXPOSE 3838
+
+USER shiny
+
 # Copy further configuration files into the Docker image
 CMD ["/usr/bin/shiny-server"]
