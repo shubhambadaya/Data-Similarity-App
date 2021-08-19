@@ -9,12 +9,12 @@
 
 library(shiny)
 library(shinythemes)
-library(zoo)
+#library(zoo)
 library(shinydashboard)
 library(DT)
 library(ggplot2)
 library(plotly)
-library(highcharter)
+#library(highcharter)
 library(data.table)
 
 load("mydata.RData", envir = .GlobalEnv)
