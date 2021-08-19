@@ -17,15 +17,18 @@ RUN apt-get update && apt-get install -y \
     libxt-dev \
     libssh2-1-dev
     
-RUN R -e "install.packages('shiny', repos='http://cran.rstudio.com/')"
-RUN R -e "install.packages('shinydashboard', repos='http://cran.rstudio.com/')"
-#RUN R -e "devtools::install_github('andrewsali/shinycssloaders')"
-#RUN R -e "devtools::install_github('rstudio/httpuv')"
-#RUN R -e "install.packages('lubridate', repos='http://cran.rstudio.com/')"
-#RUN R -e "install.packages('magrittr', repos='http://cran.rstudio.com/')"
-#RUN R -e "install.packages('glue', repos='http://cran.rstudio.com/')"
-#RUN R -e "install.packages('DT', repos='http://cran.rstudio.com/')"
-#RUN R -e "install.packages('plotly', repos='http://cran.rstudio.com/')"
+RUN R -e 'install.packages(c(\
+              "shiny", \
+              "shinythemes", \
+              "zoo", \
+              "shinydashboard", \
+              "ggplot2" \
+              "plotly", \
+              "highcharter", \
+              "data.table" \
+            ), \
+            repos="http://cran.rstudio.com/"\
+          )'
    
 ## Install packages from CRAN
 RUN install2.r --error \
@@ -40,4 +43,4 @@ COPY . /srv/shiny-server/shiny/
 # select port
 EXPOSE 3838
 # Copy further configuration files into the Docker image
-CMD ["/usr/bin/shiny-server/app.R"]
+CMD ["/usr/bin/shiny-server"]
