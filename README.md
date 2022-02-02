@@ -1,4 +1,4 @@
-# Data Similarity App
+# Datasets Similarity App
 
 R shiny application deployed on R shiny. The App has been used to compare monthly datasets on row as well as overall level.
 
